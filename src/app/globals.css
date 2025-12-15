@@ -1,26 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
+/* Fontes customizadas */
+@font-face {
+  font-family: 'Nasalization';
+  src: local('Nasalization'), url('/fonts/Nasalization.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oatmeal';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Oatmeal'), url('/fonts/Oatmeal-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Oatmeal-Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Oatmeal-Medium'), url('/fonts/Oatmeal-Medium.ttf') format('truetype');
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Theme */
+  --background: #e8ecf4;
+  --foreground: #1e293b;
+  
+  /* Glassmorphism Light - macOS Style */
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  --glass-shadow-hover: 0 12px 40px rgba(31, 38, 135, 0.25);
+  
+  /* Badge */
+  --badge-bg: rgba(255, 255, 255, 0.5);
+  --badge-border: rgba(255, 255, 255, 0.7);
+  
+  /* Colors */
+  --primary: #3b82f6;
+  --primary-light: rgba(59, 130, 246, 0.15);
+  --secondary: #6366f1;
+  --accent: #1BFD9C;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+}
+
+.dark {
+  /* Dark Theme - macOS Style */
+  --background: #1a1d2e;
+  --foreground: #f1f5f9;
+  
+  /* Glassmorphism Dark - macOS Style */
+  --glass-bg: rgba(49, 52, 68, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --glass-shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.5);
+  
+  /* Badge */
+  --badge-bg: rgba(255, 255, 255, 0.1);
+  --badge-border: rgba(255, 255, 255, 0.15);
+  
+  /* Colors */
+  --primary: #60a5fa;
+  --primary-light: rgba(96, 165, 250, 0.2);
+  --secondary: #818cf8;
+  --accent: #1BFD9C;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Cairo', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Cores de texto para tema claro/escuro */
+.text-theme {
+  color: #000000 !important;
+}
+
+.dark .text-theme {
+  color: #ffffff !important;
+}
+
+.text-theme-muted {
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.dark .text-theme-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Light theme background - Gradiente cinza para azul */
+html:not(.dark) {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 25%, #a5b4c7 50%, #7c9ab8 75%, #5b8cb8 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Dark theme background - Gradiente escuro estilo macOS */
+html.dark {
+  background: linear-gradient(135deg, #1a1d2e 0%, #252a3d 25%, #313444 50%, #3d4259 75%, #2d3148 100%) !important;
+  background-attachment: fixed !important;
 }
 
 body {
-  background: var(--background);
+  min-height: 100vh;
+  background: transparent;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Cairo', sans-serif;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+/* Glass Card - Efeito vidro macOS */
+.glass-card {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 16px;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  box-shadow: var(--glass-shadow-hover);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Glass Badge - macOS Style */
+.glass-badge {
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+}
+
+/* Glass Button - macOS Style */
+.glass-button {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  transition: all 0.2s ease;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.8) !important;
+  transform: scale(1.02);
+}
+
+.dark .glass-button:hover {
+  background: rgba(49, 52, 68, 0.9) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.7);
+}
+
+/* Selection */
+::selection {
+  background: var(--primary);
+  color: white;
 }

@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CV Portfolio - Rafael Sriegel
 
-## Getting Started
+Um portfolio moderno e responsivo construído com as tecnologias mais recentes do ecossistema React.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?logo=tailwind-css)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- 🎨 **Design Moderno** - Interface limpa e profissional
+- 🌙 **Dark/Light Mode** - Suporte a temas com next-themes
+- 📱 **Responsivo** - Funciona perfeitamente em todos os dispositivos
+- 🚀 **Performance** - Otimizado com Next.js 15 e Turbopack
+- 🎬 **Animações** - Transições suaves com Framer Motion
+- ♿ **Acessível** - Construído com boas práticas de acessibilidade
+
+## 🛠️ Stack Tecnológica
+
+- **Framework**: Next.js 15 (App Router)
+- **UI Library**: React 19
+- **Linguagem**: TypeScript
+- **Estilização**: Tailwind CSS 4
+- **Animações**: Framer Motion
+- **Ícones**: Lucide React
+- **Tema**: next-themes
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── app/
+│   ├── layout.tsx      # Layout raiz com providers
+│   ├── page.tsx        # Página inicial
+│   └── globals.css     # Estilos globais
+├── components/
+│   ├── ui/             # Componentes reutilizáveis
+│   ├── sections/       # Seções da página
+│   ├── layout/         # Header, Footer
+│   └── providers/      # Providers (Theme)
+└── lib/
+    ├── utils.ts        # Utilitários
+    └── data.ts         # Dados do portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Como Executar
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Instalar dependências
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Iniciar servidor de desenvolvimento
+npm run dev
+```
 
-## Learn More
+Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-To learn more about Next.js, take a look at the following resources:
+## 📜 Scripts Disponíveis
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Comando | Descrição |
+|---------|-----------|
+| `npm run dev` | Inicia o servidor de desenvolvimento |
+| `npm run build` | Cria o build de produção |
+| `npm run start` | Executa o build de produção |
+| `npm run lint` | Verifica o código com ESLint |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 Personalização
 
-## Deploy on Vercel
+Edite o arquivo `src/lib/data.ts` para personalizar suas informações, skills, experiências e projetos.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Desenvolvido com 💜 por Rafael Sriegel

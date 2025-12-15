@@ -18,28 +18,28 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <Comp
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center rounded-xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none",
+          "inline-flex items-center justify-center rounded-xl font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none",
           {
-            // Primary - Glass com texto preto/branco
-            "bg-[var(--glass-bg)] backdrop-blur-xl border border-[var(--glass-border)] text-black dark:text-white hover:bg-white/80 dark:hover:bg-[rgba(49,52,68,0.9)] shadow-lg hover:shadow-xl hover:scale-[1.02]":
+            // Primary - Glass consistente
+            "glass-button text-theme hover:scale-[1.02]":
               variant === "primary",
             // Secondary - Glass escuro
-            "bg-[rgba(49,52,68,0.8)] backdrop-blur-xl border border-[rgba(255,255,255,0.1)] text-white hover:bg-[rgba(49,52,68,0.95)] shadow-lg":
+            "glass-button-dark text-white hover:scale-[1.02]":
               variant === "secondary",
-            // Outline - Glass com borda e texto preto/branco
-            "bg-[var(--glass-bg)] backdrop-blur-xl border border-[var(--glass-border)] text-black dark:text-white hover:bg-white/70 dark:hover:bg-[rgba(49,52,68,0.8)]":
+            // Outline - Glass com borda destacada
+            "glass-button border-[var(--primary)]/30 text-theme hover:border-[var(--primary)]/60":
               variant === "outline",
-            // Ghost - Transparente
-            "bg-transparent hover:bg-[var(--badge-bg)] backdrop-blur-sm text-black dark:text-white":
+            // Ghost - Transparente com hover glass
+            "bg-transparent hover:glass-button text-theme":
               variant === "ghost",
             // Glass puro
-            "bg-[var(--glass-bg)] backdrop-blur-xl border border-[var(--glass-border)] text-black dark:text-white shadow-lg hover:shadow-xl":
+            "glass-button text-theme":
               variant === "glass",
           },
           {
-            "px-4 py-2 text-sm": size === "sm",
-            "px-6 py-3 text-base": size === "md",
-            "px-8 py-4 text-lg": size === "lg",
+            "px-5 py-2.5 text-sm": size === "sm",
+            "px-7 py-3.5 text-base": size === "md",
+            "px-9 py-4 text-lg": size === "lg",
           },
           className
         )}

@@ -2,101 +2,149 @@
 
 import { personalInfo } from "@/lib/data";
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, Building2, Code } from "lucide-react";
+import { 
+  FaGithub, 
+  FaLinkedin, 
+  FaBusinessTime 
+} from "react-icons/fa";
+import { SiOverleaf, SiReplit, SiGmail } from "react-icons/si";
 import { Button } from "../ui/button";
+import { useLanguage } from "../providers/language-provider";
 
 export function Hero() {
+  const { t, locale } = useLanguage();
+  
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
     >
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="inline-block px-4 py-2 rounded-full glass-badge text-theme text-sm font-medium mb-6 uppercase tracking-wider">
-              {personalInfo.role}
-            </span>
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-72 h-72 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3]
+          }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            opacity: [0.3, 0.5, 0.3]
+          }}
+          transition={{ duration: 10, repeat: Infinity }}
+        />
+      </div>
 
-            <h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-theme mb-6 whitespace-nowrap" 
-              style={{ fontFamily: "'Nasalization', sans-serif", letterSpacing: '-1px' }}
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              <span 
+                className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-xl glass-badge text-theme text-sm sm:text-lg mb-6 sm:mb-8 capitalize"
+                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, letterSpacing: '-0.02em' }}
+              >
+                {t.role}
+              </span>
+            </motion.div>
+
+            {/* Name */}
+            <motion.h1 
+              className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-theme mb-4 sm:mb-6 tracking-tight"
+              style={{ fontFamily: "'Nasalization', sans-serif" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
             >
               {personalInfo.name}
-            </h1>
+            </motion.h1>
 
-            <p className="text-lg text-theme-muted mb-8 max-w-2xl mx-auto">
-              {personalInfo.bio}
-            </p>
+            {/* Bio */}
+            <motion.p 
+              className="text-base sm:text-lg md:text-xl text-theme-muted mb-3 sm:mb-4 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
+              {t.bio}
+            </motion.p>
 
-            <div className="flex flex-wrap gap-4 mb-8 justify-center">
-              <Button size="lg" className="text-theme" asChild>
-                <a href="/cv">Currículo</a>
-              </Button>
-              <Button variant="outline" size="lg" className="text-theme" asChild>
+            {/* Subtitle */}
+            <motion.p 
+              className="text-sm sm:text-base text-theme-subtle mb-8 sm:mb-10 max-w-2xl mx-auto px-2 sm:px-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.55, duration: 0.8 }}
+            >
+              {t.hero.subtitle}
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10 sm:mb-12 justify-center items-center px-4 sm:px-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+            >
+              <Button size="lg" className="w-full sm:w-auto" asChild>
                 <a href={`mailto:${personalInfo.email}`}>
-                  <Mail className="w-5 h-5 mr-2" />
-                  Envie um e-mail
+                  <SiGmail className="w-5 h-5 mr-2" />
+                  {t.hero.contact}
                 </a>
               </Button>
-            </div>
+              <Button variant="outline" size="lg" className="text-theme w-full sm:w-auto" asChild>
+                <a href="/cv/CV_Rafael_Stuepp_Riegel.pdf" target="_blank" rel="noopener noreferrer">
+                  <SiOverleaf className="w-5 h-5 mr-2" />
+                  {t.hero.viewCV}
+                </a>
+              </Button>
+            </motion.div>
 
-            <div className="flex items-center gap-4 justify-center">
-              <a
-                href={personalInfo.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full glass-badge text-theme-muted hover:text-theme transition-all"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href={personalInfo.social.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full glass-badge text-theme-muted hover:text-theme transition-all"
-              >
-                <Github size={20} />
-              </a>
-              <a
-                href={personalInfo.social.replit}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full glass-badge text-theme-muted hover:text-theme transition-all"
-              >
-                <Code size={20} />
-              </a>
-              <a
-                href={personalInfo.social.empresa}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full glass-badge text-theme-muted hover:text-theme transition-all"
-              >
-                <Building2 size={20} />
-              </a>
-            </div>
+            {/* Social Links */}
+            <motion.div 
+              className="flex items-center gap-2 sm:gap-3 justify-center flex-wrap"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+            >
+              {[
+                { href: personalInfo.social.empresa, icon: FaBusinessTime, label: locale === "pt" ? "Empresa" : "Company" },
+                { href: personalInfo.social.linkedin, icon: FaLinkedin, label: "LinkedIn" },
+                { href: personalInfo.social.github, icon: FaGithub, label: "GitHub" },
+                { href: personalInfo.social.replit, icon: SiReplit, label: locale === "pt" ? "Perfil no Replit" : "Replit Profile" },
+              ].map((social, index) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 sm:p-3.5 rounded-xl glass-badge text-theme-subtle hover:text-theme transition-all duration-300 group"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9 + index * 0.1 }}
+                  title={social.label}
+                >
+                  <social.icon className="w-5 h-5 sm:w-[22px] sm:h-[22px] group-hover:text-[var(--primary)] transition-colors" />
+                </motion.a>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
-          <ArrowDown className="text-theme-muted" size={24} />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }

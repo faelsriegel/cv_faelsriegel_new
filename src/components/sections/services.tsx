@@ -1,25 +1,29 @@
 "use client";
 
-import { services, sectionTitles } from "@/lib/data";
+import { services } from "@/lib/data";
 import { motion } from "framer-motion";
-import { Server, Shield, Laptop } from "lucide-react";
+import { FaServer, FaShieldAlt, FaLaptopCode } from "react-icons/fa";
 import { SectionTitle } from "../ui/section-title";
+import { useLanguage } from "../providers/language-provider";
 
 const iconMap: Record<string, React.ElementType> = {
-  server: Server,
-  shield: Shield,
-  laptop: Laptop,
+  server: FaServer,
+  shield: FaShieldAlt,
+  laptop: FaLaptopCode,
 };
 
 export function Services() {
+  const { t } = useLanguage();
+  
   return (
     <section id="services" className="py-20">
       <div className="container mx-auto px-4">
-        <SectionTitle title={sectionTitles.services} />
+        <SectionTitle title={t.sections.services} />
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {services.map((service, index) => {
             const Icon = iconMap[service.icon];
+            const translatedService = t.services[index];
             
             return (
               <motion.div
@@ -28,34 +32,42 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative glass-card rounded-2xl p-8"
+                className="group relative glass-card rounded-2xl p-6 h-full"
               >
-                {/* Icon */}
-                <div className="w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
-                  <Icon size={32} />
-                </div>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {service.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 glass-badge text-[var(--primary)] text-xs font-medium rounded-full uppercase tracking-wide"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                {/* Header com Icon e Tags lado a lado */}
+                <div className="flex items-start justify-between mb-5">
+                  <div className="w-14 h-14 rounded-xl glass-badge flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Icon size={28} className="text-theme" />
+                  </div>
+                  
+                  {/* Tags como badges pequenos */}
+                  <div className="flex flex-wrap gap-1.5 justify-end max-w-[60%]">
+                    {translatedService.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 glass-badge text-theme-subtle text-[10px] font-semibold rounded-xl uppercase tracking-wider"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-[var(--text-primary)] mb-3">
-                  {service.name}
+                <h3 
+                  className="text-lg font-bold text-theme mb-3"
+                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, letterSpacing: '-0.02em' }}
+                >
+                  {translatedService.name}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[var(--text-secondary)] leading-relaxed">
-                  {service.description}
+                <p className="text-theme-muted leading-relaxed text-sm">
+                  {translatedService.description}
                 </p>
+
+                {/* Decorative line */}
+                <div className="absolute bottom-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
             );
           })}

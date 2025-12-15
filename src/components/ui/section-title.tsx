@@ -17,13 +17,13 @@ export function SectionTitle({ title, subtitle }: SectionTitleProps) {
       className="text-center mb-12"
     >
       <h2 
-        className="text-3xl md:text-4xl font-bold text-[var(--text-primary)]"
-        style={{ fontFamily: "'Nasalization', sans-serif", letterSpacing: '1px' }}
+        className="text-3xl md:text-4xl font-bold text-theme"
+        style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800, letterSpacing: '-0.02em' }}
       >
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-[var(--text-secondary)] max-w-2xl mx-auto">
+        <p className="mt-4 text-theme-muted max-w-2xl mx-auto">
           {subtitle}
         </p>
       )}

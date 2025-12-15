@@ -1,62 +1,117 @@
 "use client";
 
-import { skills, sectionTitles } from "@/lib/data";
+import { skills } from "@/lib/data";
 import { motion } from "framer-motion";
 import { SectionTitle } from "../ui/section-title";
+import { useLanguage } from "../providers/language-provider";
+import { IconType } from "react-icons";
+import {
+  FaReact,
+  FaNodeJs,
+  FaHtml5,
+  FaCss3,
+  FaDocker,
+  FaJava,
+  FaJs,
+  FaLinux,
+  FaWindows,
+  FaAws,
+  FaFreebsd,
+  FaWordpress,
+  FaPython,
+  FaUbuntu
+} from "react-icons/fa";
+import {
+  SiKubernetes,
+  SiGrafana,
+  SiPrometheus,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiFigma,
+  SiJenkins,
+  SiVercel,
+  SiCplusplus,
+  SiBootstrap,
+  SiTerraform,
+  SiElementor,
+  SiDjango,
+  SiHeroku,
+  SiFlask,
+  SiGitlab,
+  SiKalilinux,
+  SiAnthropic,
+  SiGooglegemini,
+  SiOpenai,
+  SiDigitalocean,
+  SiGooglecloud
+} from "react-icons/si";
+import { VscAzure } from "react-icons/vsc";
+import { TbChartHistogram } from "react-icons/tb";
+import { ImGit } from "react-icons/im";
 
-// Mapa de ícones devicon para cada skill
-const skillIconMap: Record<string, string> = {
+// Mapa de ícones react-icons para cada skill
+const skillIconMap: Record<string, IconType> = {
   // Sistemas Operacionais
-  "Windows": "devicon-windows11-original colored",
-  "Linux": "devicon-linux-plain",
-  "FreeBSD": "devicon-unix-original",
-  "Ubuntu": "devicon-ubuntu-plain colored",
-  "Kali Linux": "devicon-linux-plain colored",
+  "Windows": FaWindows,
+  "Linux": FaLinux,
+  "FreeBSD": FaFreebsd,
+  "Ubuntu": FaUbuntu,
+  "Kali Linux": SiKalilinux,
   // Linguagens
-  "Java": "devicon-java-plain colored",
-  "C++": "devicon-cplusplus-plain colored",
-  "Python": "devicon-python-plain colored",
-  "Django": "devicon-django-plain colored",
-  "Flask": "devicon-flask-original",
+  "Java": FaJava,
+  "C++": SiCplusplus,
+  "Python": FaPython,
+  "Django": SiDjango,
+  "Flask": SiFlask,
   // Frontend
-  "HTML": "devicon-html5-plain colored",
-  "CSS": "devicon-css3-plain colored",
-  "Bootstrap CSS": "devicon-bootstrap-plain colored",
-  "Tailwind CSS": "devicon-tailwindcss-original colored",
-  "Figma": "devicon-figma-plain colored",
-  "Javascript": "devicon-javascript-plain colored",
-  "Typescript": "devicon-typescript-plain colored",
-  "React.js": "devicon-react-original colored",
-  "Node.js": "devicon-nodejs-plain colored",
-  "Next.js": "devicon-nextjs-plain",
+  "HTML": FaHtml5,
+  "CSS": FaCss3,
+  "Bootstrap CSS": SiBootstrap,
+  "Tailwind CSS": SiTailwindcss,
+  "Figma": SiFigma,
+  "Javascript": FaJs,
+  "Typescript": SiTypescript,
+  "React.js": FaReact,
+  "Node.js": FaNodeJs,
+  "Next.js": SiNextdotjs,
   // Deploy & Cloud
-  "Vercel": "devicon-vercel-original",
-  "Heroku": "devicon-heroku-original colored",
-  "Git": "devicon-git-plain colored",
-  "Gitlab": "devicon-gitlab-plain colored",
-  "Wordpress": "devicon-wordpress-plain colored",
-  "Elementor": "devicon-wordpress-plain colored",
+  "Vercel": SiVercel,
+  "Heroku": SiHeroku,
+  "Git": ImGit,
+  "Gitlab": SiGitlab,
+  "Wordpress": FaWordpress,
+  "Elementor": SiElementor,
   // DevOps
-  "Docker": "devicon-docker-plain colored",
-  "Jenkins": "devicon-jenkins-plain colored",
-  "Kubernetes": "devicon-kubernetes-plain colored",
-  "Terraform": "devicon-terraform-plain colored",
-  "Prometheus": "devicon-prometheus-original colored",
-  "Grafana": "devicon-grafana-plain colored",
-  "Zabbix": "devicon-linux-plain colored",
+  "Docker": FaDocker,
+  "Jenkins": SiJenkins,
+  "Kubernetes": SiKubernetes,
+  "Terraform": SiTerraform,
+  "Prometheus": SiPrometheus,
+  "Grafana": SiGrafana,
+  "Zabbix": TbChartHistogram,
   // Cloud Providers
-  "AWS": "devicon-amazonwebservices-plain-wordmark colored",
-  "Azure": "devicon-azure-plain colored",
-  "Google Cloud": "devicon-googlecloud-plain colored",
-  "Digital Ocean": "devicon-digitalocean-plain colored",
+  "AWS": FaAws,
+  "Azure": VscAzure,
+  "Google Cloud": SiGooglecloud,
+  "Digital Ocean": SiDigitalocean,
   // AI
-  "Claude Code": "devicon-vscode-plain colored",
-  "ChatGPT": "devicon-openai-plain",
-  "Google Gemini": "devicon-google-plain colored",
+  "Claude Code": SiAnthropic,
+  "ChatGPT": SiOpenai,
+  "Google Gemini": SiGooglegemini,
 };
 
 export function Skills() {
+  const { t, locale } = useLanguage();
+  
   const getExperienceText = (years: number) => {
+    if (locale === "en") {
+      if (years < 1) {
+        const months = Math.round(years * 12);
+        return `${months}+ ${months === 1 ? "month" : "months"} experience`;
+      }
+      return `${years}+ ${years === 1 ? "year" : "years"} experience`;
+    }
     if (years < 1) {
       const months = Math.round(years * 12);
       return `+ de ${months} ${months === 1 ? "mês" : "meses"} de experiência`;
@@ -67,12 +122,12 @@ export function Skills() {
   return (
     <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
-        <SectionTitle title={sectionTitles.skills} />
+        <SectionTitle title={t.sections.skills} />
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5">
             {skills.map((skill, index) => {
-              const iconClass = skillIconMap[skill.name];
+              const IconComponent = skillIconMap[skill.name];
               
               return (
                 <motion.div
@@ -83,23 +138,23 @@ export function Skills() {
                   transition={{ duration: 0.3, delay: index * 0.02 }}
                   className="group"
                 >
-                  <div className="glass-card rounded-2xl p-6 text-center h-full flex flex-col justify-center hover:border-[var(--primary)]/50 transition-all duration-300">
+                  <div className="glass-card rounded-2xl p-6 text-center h-full flex flex-col justify-center items-center transition-all duration-300">
                     {/* Skill Icon */}
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-xl glass-badge flex items-center justify-center group-hover:scale-110 transition-all duration-300">
-                      {iconClass ? (
-                        <i className={`${iconClass} text-2xl`}></i>
+                    <div className="mb-4 group-hover:scale-110 transition-all duration-300">
+                      {IconComponent ? (
+                        <IconComponent className="text-5xl text-theme" />
                       ) : (
-                        <span className="text-xl font-bold text-[var(--primary)]">
+                        <span className="text-4xl font-bold text-theme">
                           {skill.name.charAt(0)}
                         </span>
                       )}
                     </div>
 
-                    <h3 className="font-semibold text-[var(--text-primary)] text-sm mb-2">
+                    <h3 className="font-semibold text-theme text-sm mb-2">
                       {skill.name}
                     </h3>
 
-                    <p className="text-xs text-[var(--text-muted)]">
+                    <p className="text-xs text-theme-muted">
                       {getExperienceText(skill.years)}
                     </p>
                   </div>

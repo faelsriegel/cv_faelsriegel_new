@@ -1,6 +1,7 @@
 export const personalInfo = {
   name: "Rafael Stuepp Riegel",
-  role: "Eng. de Computação - Stuepp Riegel Company LTDA",
+  role: "Engenheiro de Computação",
+  company: "Stuepp Riegel Company LTDA",
   email: "rafaelsriegel@gmail.com",
   phone: "+55 (47) 99999-9999",
   location: "São Bento do Sul, SC - Brasil",
@@ -105,6 +106,7 @@ export const education = [
     schedule: "Integral (tarde e noite)",
     modality: "Presencial",
     image: "/images/projects/IFC.png",
+    imageEco: "/images/projects/ECO.png",
     skills: [
       "ALGORITMOS E PROGRAMAÇÃO",
       "DESENVOLVIMENTO WEB",
@@ -192,7 +194,7 @@ export const certificates = [
     id: 6,
     name: "Membro APDADOS",
     description: "Membro APDADOS Comitê Público",
-    image: "/images/projects/APDADOS.png",
+    image: "/images/projects/APDADOS.webp",
     skills: [
       "LGPD",
       "GDPR",
@@ -214,7 +216,7 @@ export const portfolioFullStack = [
     name: "SAPU - Sistema Analítico de Progressão Universitária",
     description:
       "Solução que consiste em ser um app web para realizar o gerenciamento, controle e análise da progressão acadêmica para os cursos superiores",
-    image: "/images/projects/projeto4.png",
+    image: "/images/projects/projeto4.webp",
     skills: ["Typescript", "React", "Next"],
     websiteUrl: "https://sapu.eco.br",
   },
@@ -223,7 +225,7 @@ export const portfolioFullStack = [
     name: "Safeguard - Plataforma de Gestão & Adequação à LGPD",
     description:
       "Solução dedicada à auxiliar as empresas a se adequarem à legislação, em especial a LGPD, oferecendo aspectos de governança e compliance de maneira fácil e eficiente.",
-    image: "/images/projects/projeto10.png",
+    image: "/images/projects/projeto10.webp",
     skills: ["HTML/CSS", "Javascript"],
     websiteUrl: "https://dpohub.vercel.app",
   },
@@ -232,7 +234,7 @@ export const portfolioFullStack = [
     name: "ZenBookee - Ferramentas para Contadores",
     description:
       "Aplicativo Web para contabilidades, que conta com automações (bots), modificações de planilhas para importação em sistemas contábeis e gerador de e-mails.",
-    image: "/images/projects/projeto1.png",
+    image: "/images/projects/projeto1.webp",
     skills: ["HTML/CSS", "Python", "Django"],
     websiteUrl: "https://zenbookee.com.br",
   },
@@ -241,7 +243,7 @@ export const portfolioFullStack = [
     name: "Projeto de DTA - Controlador MIDI Virtual",
     description:
       "Desenvolvido na disciplina de Desenho Técnico Avançado do IFC Campus SBS. Conta com informações sobre o processo de criação, os componentes utilizados e a aplicação prática e virtualizada do Controlador MIDI desenvolvido.",
-    image: "/images/projects/projeto11.png",
+    image: "/images/projects/projeto11.webp",
     skills: ["HTML/CSS", "Javascript"],
     websiteUrl: "https://midiview.vercel.app",
   },
@@ -271,7 +273,7 @@ export const portfolioLandingPages = [
     name: "Eletricista Rudnik",
     description:
       "Site dedicado à divulgação dos serviços oferecidos pelo Eletricista Rudnik. Este projeto proporciona um ambiente que destaca seus serviços de maneira profissional e de fácil contato com o cliente.",
-    image: "/images/projects/projeto7.png",
+    image: "/images/projects/projeto7.webp",
     skills: ["HTML/CSS", "Javascript"],
     websiteUrl: "https://eletricistarudnik.crnet.com.br",
   },
@@ -280,7 +282,7 @@ export const portfolioLandingPages = [
     name: "Margarida de Quadra",
     description:
       "Website voltado para promover os serviços prestados por Margarida de Quadra. Com o intuito de ser um espaço online que enfatiza seus serviços de maneira profissional, além de facilitar o contato com os clientes.",
-    image: "/images/projects/projeto5.png",
+    image: "/images/projects/projeto5.webp",
     skills: ["HTML/CSS", "Javascript"],
     websiteUrl: "https://margaridadequadra.vercel.app",
   },
@@ -289,7 +291,7 @@ export const portfolioLandingPages = [
     name: "Portfólio de Sites - Divulgador de Projetos",
     description:
       "Desenvolvido com o objetivo de testar o efeito parallax, através de seções fixas, afim de testar conhecimentos e validar templates para portfolios para divulgar projetos",
-    image: "/images/projects/projeto8.png",
+    image: "/images/projects/projeto8.webp",
     skills: ["HTML/CSS", "Javascript"],
     websiteUrl: "https://portfoliosites.crnet.com.br",
   },
@@ -298,7 +300,7 @@ export const portfolioLandingPages = [
     name: "Website com Bootstrap",
     description:
       "Atividade associada à disciplina de Programação 2 de Engenharia de Computação, onde foi desenvolvido um website simples e estático, utilizando Bootstrap. Toda a identidade visual já estava pré-determinada pelo Professor.",
-    image: "/images/projects/projeto3.png",
+    image: "/images/projects/projeto3.webp",
     skills: ["HTML/CSS", "Bootstrap"],
     websiteUrl: "https://web-site-bootstrap.vercel.app",
   },

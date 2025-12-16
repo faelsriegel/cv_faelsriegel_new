@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { LanguageProvider } from "@/components/providers/language-provider";
 import { ParticlesBackground } from "@/components/ui/particles-background";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { NoiseOverlay } from "@/components/ui/noise-overlay";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -199,6 +200,7 @@ export default function RootLayout({
         <ThemeProvider>
           <LanguageProvider>
             <ParticlesBackground />
+            <NoiseOverlay />
             {children}
             <ScrollToTop />
           </LanguageProvider>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { LanguageProvider } from "@/components/providers/language-provider";
+import { ParticlesBackground } from "@/components/ui/particles-background";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -195,7 +196,10 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased" suppressHydrationWarning>
         <ThemeProvider>
-          <LanguageProvider>{children}</LanguageProvider>
+          <LanguageProvider>
+            <ParticlesBackground />
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -14,6 +14,8 @@ export const translations = {
       education: "Formação",
       certificates: "Certificações",
       skills: "Skills",
+      openMenu: "Abrir menu",
+      closeMenu: "Fechar menu",
     },
     
     // Section Titles
@@ -130,12 +132,12 @@ export const translations = {
           description: "Desenvolvido na disciplina de Desenho Técnico Avançado do IFC Campus SBS. Conta com informações sobre o processo de criação, os componentes utilizados e a aplicação prática e virtualizada do Controlador MIDI desenvolvido.",
         },
         {
-          name: "Projeto em andamento",
-          description: "Projeto placeholder para representar futuras entregas. Em breve, novos detalhes e resultados serão adicionados aqui.",
+          name: "Sr. Coruja - Monitorador de Preços",
+          description: "Monitoramento ativo 24/7 com alertas de preço no seu Telegram. Cole o link do produto, defina sua meta e receba uma notificação assim que o preço cair. Simples, rápido e automático.",
         },
         {
-          name: "Projeto em planejamento",
-          description: "Espaço reservado para uma iniciativa atualmente em planejamento estratégico. Informações adicionais serão publicadas quando disponíveis.",
+          name: "Sr. Tabs - Plataforma Musical Interativa",
+          description: "Plataforma central para ensino e experimentação musical interativa, com biblioteca completa de acordeões e demais instrumentos musicais virtuais, suporte a tablaturas interativas, interfaces responsivas e arquitetura modular.",
         },
       ],
       landingPages: [
@@ -195,6 +197,8 @@ export const translations = {
       education: "Education",
       certificates: "Certifications",
       skills: "Skills",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
     },
     
     // Section Titles
@@ -311,12 +315,12 @@ export const translations = {
           description: "Developed in the Advanced Technical Drawing course at IFC Campus SBS. Contains information about the creation process, components used, and the practical virtualized application of the developed MIDI Controller.",
         },
         {
-          name: "Project in progress",
-          description: "Placeholder project to represent future deliveries. Soon, new details and results will be added here.",
+          name: "Sr. Coruja - Price Monitor",
+          description: "24/7 active monitoring with price alerts on your Telegram. Paste the product link, set your target and receive a notification as soon as the price drops. Simple, fast and automatic.",
         },
         {
-          name: "Project in planning",
-          description: "Space reserved for an initiative currently in strategic planning. Additional information will be published when available.",
+          name: "Sr. Tabs - Interactive Music Platform",
+          description: "Central platform for interactive music teaching and experimentation, featuring a complete library of accordions and other virtual musical instruments, interactive tablature support, responsive interfaces and modular architecture.",
         },
       ],
       landingPages: [

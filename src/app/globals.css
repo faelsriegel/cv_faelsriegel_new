@@ -1,6 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 @import "tailwindcss";
 
+/* Prevenir scroll horizontal em mobile */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Hide scrollbar for tags */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Fonte customizada para o nome */
 @font-face {
   font-family: 'Nasalization';
@@ -503,17 +519,31 @@ html:not(.dark) .btn-gradient:hover * {
   background: rgba(var(--primary-rgb), 0.5);
 }
 
-/* Icons - White in dark mode */
+/* Icons - White in dark mode, dark in light mode */
+html:not(.dark) svg,
+html:not(.dark) i[class*="devicon"] {
+  color: #0f172a !important;
+}
+
 .dark svg,
 .dark i {
   color: white !important;
 }
 
+/* Ícones que são pretos por padrão (usam SVG com fill) - inverter para branco no tema escuro */
 .dark .devicon-nextjs-plain,
+.dark .devicon-nodejs-plain,
 .dark .devicon-flask-original,
 .dark .devicon-vercel-original,
 .dark .devicon-openai-plain {
   filter: invert(1) !important;
+  -webkit-filter: invert(1) !important;
+}
+
+/* No tema claro, garantir que esses ícones fiquem pretos */
+html:not(.dark) .devicon-nextjs-plain,
+html:not(.dark) .devicon-nodejs-plain {
+  filter: none !important;
 }
 
 /* Selection */

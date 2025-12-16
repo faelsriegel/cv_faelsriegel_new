@@ -217,7 +217,7 @@ export const portfolioFullStack = [
     description:
       "Solução que consiste em ser um app web para realizar o gerenciamento, controle e análise da progressão acadêmica para os cursos superiores",
     image: "/images/projects/projeto4.webp",
-    skills: ["Typescript", "React", "Next"],
+    skills: ["React", "Node.js", "Tailwind", "Typescript", "Next.js", "Vercel"],
     websiteUrl: "https://sapu.eco.br",
   },
   {
@@ -226,7 +226,7 @@ export const portfolioFullStack = [
     description:
       "Solução dedicada à auxiliar as empresas a se adequarem à legislação, em especial a LGPD, oferecendo aspectos de governança e compliance de maneira fácil e eficiente.",
     image: "/images/projects/projeto10.webp",
-    skills: ["HTML/CSS", "Javascript"],
+    skills: ["React", "Node.js", "Tailwind", "Typescript", "Next.js", "Vercel"],
     websiteUrl: "https://dpohub.vercel.app",
   },
   {
@@ -235,7 +235,7 @@ export const portfolioFullStack = [
     description:
       "Aplicativo Web para contabilidades, que conta com automações (bots), modificações de planilhas para importação em sistemas contábeis e gerador de e-mails.",
     image: "/images/projects/projeto1.webp",
-    skills: ["HTML/CSS", "Python", "Django"],
+    skills: ["HTML/CSS", "Python", "Django", "Vercel"],
     websiteUrl: "https://zenbookee.com.br",
   },
   {
@@ -244,26 +244,26 @@ export const portfolioFullStack = [
     description:
       "Desenvolvido na disciplina de Desenho Técnico Avançado do IFC Campus SBS. Conta com informações sobre o processo de criação, os componentes utilizados e a aplicação prática e virtualizada do Controlador MIDI desenvolvido.",
     image: "/images/projects/projeto11.webp",
-    skills: ["HTML/CSS", "Javascript"],
+    skills: ["HTML", "CSS", "Vercel"],
     websiteUrl: "https://midiview.vercel.app",
   },
   {
     id: 5,
-    name: "Projeto em andamento",
+    name: "Sr. Coruja - Monitorador de Preços",
     description:
-      "Projeto placeholder para representar futuras entregas. Em breve, novos detalhes e resultados serão adicionados aqui.",
-    image: "/images/projects/placeholder.svg",
-    skills: ["Em breve"],
-    isPlaceholder: true,
+      "Monitoramento ativo 24/7 com alertas de preço no seu Telegram. Cole o link do produto, defina sua meta e receba uma notificação assim que o preço cair. Simples, rápido e automático.",
+    image: "/images/projects/srcoruja.webp",
+    skills: ["React", "Node.js", "Tailwind", "Typescript", "Next.js", "Vercel"],
+    websiteUrl: "https://srcoruja.vercel.app",
   },
   {
     id: 6,
-    name: "Projeto em planejamento",
+    name: "Sr. Tabs - Plataforma Musical Interativa",
     description:
-      "Espaço reservado para uma iniciativa atualmente em planejamento estratégico. Informações adicionais serão publicadas quando disponíveis.",
-    image: "/images/projects/placeholder.svg",
-    skills: ["Em breve"],
-    isPlaceholder: true,
+      "Plataforma central para ensino e experimentação musical interativa, com biblioteca completa de acordeões e demais instrumentos musicais virtuais, suporte a tablaturas interativas, interfaces responsivas e arquitetura modular.",
+    image: "/images/projects/srtabs.webp",
+    skills: ["React", "Node.js", "Tailwind", "Typescript", "Next.js", "Vercel"],
+    websiteUrl: "https://srtabs.vercel.app",
   },
 ];
 
@@ -274,7 +274,7 @@ export const portfolioLandingPages = [
     description:
       "Site dedicado à divulgação dos serviços oferecidos pelo Eletricista Rudnik. Este projeto proporciona um ambiente que destaca seus serviços de maneira profissional e de fácil contato com o cliente.",
     image: "/images/projects/projeto7.webp",
-    skills: ["HTML/CSS", "Javascript"],
+    skills: ["HTML", "CSS", "Vercel"],
     websiteUrl: "https://eletricistarudnik.crnet.com.br",
   },
   {
@@ -283,7 +283,7 @@ export const portfolioLandingPages = [
     description:
       "Website voltado para promover os serviços prestados por Margarida de Quadra. Com o intuito de ser um espaço online que enfatiza seus serviços de maneira profissional, além de facilitar o contato com os clientes.",
     image: "/images/projects/projeto5.webp",
-    skills: ["HTML/CSS", "Javascript"],
+    skills: ["HTML", "CSS", "Vercel"],
     websiteUrl: "https://margaridadequadra.vercel.app",
   },
   {
@@ -292,7 +292,7 @@ export const portfolioLandingPages = [
     description:
       "Desenvolvido com o objetivo de testar o efeito parallax, através de seções fixas, afim de testar conhecimentos e validar templates para portfolios para divulgar projetos",
     image: "/images/projects/projeto8.webp",
-    skills: ["HTML/CSS", "Javascript"],
+    skills: ["HTML", "CSS", "Vercel"],
     websiteUrl: "https://portfoliosites.crnet.com.br",
   },
   {
@@ -301,7 +301,7 @@ export const portfolioLandingPages = [
     description:
       "Atividade associada à disciplina de Programação 2 de Engenharia de Computação, onde foi desenvolvido um website simples e estático, utilizando Bootstrap. Toda a identidade visual já estava pré-determinada pelo Professor.",
     image: "/images/projects/projeto3.webp",
-    skills: ["HTML/CSS", "Bootstrap"],
+    skills: ["HTML/CSS", "Bootstrap", "Vercel"],
     websiteUrl: "https://web-site-bootstrap.vercel.app",
   },
   {

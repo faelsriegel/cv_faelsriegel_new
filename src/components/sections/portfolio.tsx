@@ -6,18 +6,41 @@ import { ExternalLink, Folder } from "lucide-react";
 import Image from "next/image";
 import { SectionTitle } from "../ui/section-title";
 import { useLanguage } from "../providers/language-provider";
+import { IconType } from "react-icons";
+import {
+  FaReact,
+  FaNodeJs,
+  FaHtml5,
+  FaCss3,
+  FaPython,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiBootstrap,
+  SiDjango,
+  SiTelegram,
+  SiVercel,
+} from "react-icons/si";
 
-// Mapa de ícones devicon para skills
-const skillIconMap: Record<string, string> = {
-  "Typescript": "devicon-typescript-plain colored",
-  "React": "devicon-react-original colored",
-  "Next": "devicon-nextjs-plain",
-  "HTML/CSS": "devicon-html5-plain colored",
-  "Javascript": "devicon-javascript-plain colored",
-  "Python": "devicon-python-plain colored",
-  "Django": "devicon-django-plain colored",
-  "Bootstrap": "devicon-bootstrap-plain colored",
-  "Em breve": "",
+// Mapa de ícones react-icons para skills
+const skillIconMap: Record<string, IconType> = {
+  "Typescript": SiTypescript,
+  "React": FaReact,
+  "Next": SiNextdotjs,
+  "Next.js": SiNextdotjs,
+  "Node.js": FaNodeJs,
+  "HTML/CSS": FaHtml5,
+  "HTML": FaHtml5,
+  "CSS": FaCss3,
+  "Javascript": FaReact,
+  "Python": FaPython,
+  "Django": SiDjango,
+  "Bootstrap": SiBootstrap,
+  "Tailwind": SiTailwindcss,
+  "Telegram API": SiTelegram,
+  "Vercel": SiVercel,
 };
 
 interface Project {
@@ -43,14 +66,14 @@ function ProjectCard({ project, index, comingSoonText = "Em breve" }: { project:
       className={isPlaceholder ? "opacity-60" : ""}
     >
       <div className="group h-full glass-card rounded-2xl overflow-hidden flex flex-col">
-        {/* Image - aspect ratio fixo */}
-        <div className="relative aspect-[16/10] bg-gradient-to-br from-blue-600/10 to-purple-600/10 overflow-hidden">
+        {/* Image - aspect ratio fixo com contain */}
+        <div className="relative aspect-[16/10] bg-gradient-to-br from-blue-600/5 to-purple-600/5 overflow-hidden">
           {project.image && !project.image.includes("placeholder") ? (
             <Image
               src={project.image}
               alt={project.name}
               fill
-              className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              className="object-contain group-hover:scale-105 transition-transform duration-500"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
@@ -61,22 +84,6 @@ function ProjectCard({ project, index, comingSoonText = "Em breve" }: { project:
 
         {/* Content */}
         <div className="p-5 flex flex-col flex-1">
-          {/* Skills/Tags with Icons */}
-          <div className="flex flex-wrap gap-1.5 mb-3">
-            {project.skills.map((skill) => {
-              const iconClass = skillIconMap[skill];
-              return (
-                <span
-                  key={skill}
-                  className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium rounded-lg glass-badge text-theme-muted"
-                >
-                  {iconClass && <i className={`${iconClass} text-xs`}></i>}
-                  {skill}
-                </span>
-              );
-            })}
-          </div>
-
           <h3 className="text-base font-bold text-theme mb-2 line-clamp-2">
             {project.name}
           </h3>
@@ -84,6 +91,23 @@ function ProjectCard({ project, index, comingSoonText = "Em breve" }: { project:
           <p className="text-xs text-theme-muted line-clamp-3 mb-4 flex-1">
             {project.description}
           </p>
+
+          {/* Skills/Tags with Icons - centered */}
+          <div className="flex flex-wrap gap-1.5 mb-4 justify-center">
+            {project.skills.map((skill) => {
+              const Icon = skillIconMap[skill];
+              return (
+                <span
+                  key={skill}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 glass-badge text-theme-muted text-[10px] font-medium rounded-xl"
+                  title={skill}
+                >
+                  {Icon && <Icon className="text-sm" />}
+                  {!Icon && skill}
+                </span>
+              );
+            })}
+          </div>
 
           {/* Button */}
           {!isPlaceholder && project.websiteUrl ? (

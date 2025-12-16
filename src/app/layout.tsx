@@ -183,6 +183,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="canonical" href="https://www.srcompanytechsolutions.com" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
         <meta name="theme-color" content="#2563eb" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />

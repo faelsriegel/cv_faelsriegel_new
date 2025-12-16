@@ -2,12 +2,7 @@
 
 import { personalInfo } from "@/lib/data";
 import { motion } from "framer-motion";
-import { 
-  FaGithub, 
-  FaLinkedin, 
-  FaBusinessTime 
-} from "react-icons/fa";
-import { SiOverleaf, SiReplit, SiGmail } from "react-icons/si";
+import { Github, Linkedin, Mail, Building2, Code, FileText } from "lucide-react";
 import { Button } from "../ui/button";
 import { useLanguage } from "../providers/language-provider";
 
@@ -100,13 +95,12 @@ export function Hero() {
             >
               <Button size="lg" className="w-full sm:w-auto" asChild>
                 <a href={`mailto:${personalInfo.email}`}>
-                  <SiGmail className="w-5 h-5 mr-2" />
+                  <Mail className="w-5 h-5 mr-2" />
                   {t.hero.contact}
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="text-theme w-full sm:w-auto" asChild>
-                <a href="/cv/CV_Rafael_Stuepp_Riegel.pdf" target="_blank" rel="noopener noreferrer">
-                  <SiOverleaf className="w-5 h-5 mr-2" />
+                <a href="/cv">
                   {t.hero.viewCV}
                 </a>
               </Button>
@@ -120,16 +114,17 @@ export function Hero() {
               transition={{ delay: 0.8, duration: 0.6 }}
             >
               {[
-                { href: personalInfo.social.empresa, icon: FaBusinessTime, label: locale === "pt" ? "Empresa" : "Company" },
-                { href: personalInfo.social.linkedin, icon: FaLinkedin, label: "LinkedIn" },
-                { href: personalInfo.social.github, icon: FaGithub, label: "GitHub" },
-                { href: personalInfo.social.replit, icon: SiReplit, label: locale === "pt" ? "Perfil no Replit" : "Replit Profile" },
+                { href: "/cv", icon: FileText, label: locale === "pt" ? "Currículo" : "Resume" },
+                { href: personalInfo.social.linkedin, icon: Linkedin, label: "LinkedIn" },
+                { href: personalInfo.social.github, icon: Github, label: "GitHub" },
+                { href: personalInfo.social.replit, icon: Code, label: locale === "pt" ? "Perfil no Replit" : "Replit Profile" },
+                { href: personalInfo.social.empresa, icon: Building2, label: locale === "pt" ? "Empresa" : "Company" },
               ].map((social, index) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={social.href.startsWith("/") ? "_self" : "_blank"}
+                  rel={social.href.startsWith("/") ? undefined : "noopener noreferrer"}
                   className="p-3 sm:p-3.5 rounded-xl glass-badge text-theme-subtle hover:text-theme transition-all duration-300 group"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}

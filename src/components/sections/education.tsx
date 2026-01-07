@@ -77,7 +77,7 @@ export function Education() {
                 </div>
 
                 {/* Instituição por último */}
-                <p className="text-theme-muted text-[11px] text-center whitespace-nowrap">
+                <p className="text-theme-muted text-[11px] text-center whitespace-normal break-words max-w-full">
                   {t.education.institution} | {t.education.labels.duration}: {t.education.duration} | {t.education.labels.schedule}: {t.education.schedule} | {t.education.labels.modality}: {t.education.modality}
                 </p>
               </a>

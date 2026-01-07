@@ -99,8 +99,14 @@ export function Hero() {
                   {t.hero.contact}
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="text-theme w-full sm:w-auto" asChild>
-                <a href="/cv">
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-theme w-full sm:w-auto"
+                asChild
+              >
+                <a href="/cv/CV_Rafael_Stuepp_Riegel.pdf" target="_blank" rel="noopener noreferrer">
+                  <FileText className="w-5 h-5 mr-2" />
                   {t.hero.viewCV}
                 </a>
               </Button>
@@ -114,7 +120,6 @@ export function Hero() {
               transition={{ delay: 0.8, duration: 0.6 }}
             >
               {[
-                { href: "/cv", icon: FileText, label: locale === "pt" ? "Currículo" : "Resume" },
                 { href: personalInfo.social.linkedin, icon: Linkedin, label: "LinkedIn" },
                 { href: personalInfo.social.github, icon: Github, label: "GitHub" },
                 { href: personalInfo.social.replit, icon: Code, label: locale === "pt" ? "Perfil no Replit" : "Replit Profile" },
@@ -123,8 +128,8 @@ export function Hero() {
                 <motion.a
                   key={social.label}
                   href={social.href}
-                  target={social.href.startsWith("/") ? "_self" : "_blank"}
-                  rel={social.href.startsWith("/") ? undefined : "noopener noreferrer"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-3 sm:p-3.5 rounded-xl glass-badge text-theme-subtle hover:text-theme transition-all duration-300 group"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}

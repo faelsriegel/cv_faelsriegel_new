@@ -16,7 +16,7 @@ export const personalInfo = {
     github: "https://github.com/faelsriegel",
     linkedin: "https://www.linkedin.com/in/rafael-stuepp-riegel/",
     replit: "https://replit.com/@faelsriegel?tab=repls",
-    empresa: "https://www.econodata.com.br/consulta-empresa/48053675000125-RAFAEL-STUEPP-RIEGEL",
+    empresa: "https://cnpj.biz/57130014000147",
   },
 };
 

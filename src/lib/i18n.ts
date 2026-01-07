@@ -33,7 +33,7 @@ export const translations = {
     hero: {
       contact: "Contato",
       viewCV: "Currículo",
-      subtitle: "Entre em contato para conversar sobre projetos que você quer desenvolver",
+      subtitle: "Entre em contato para conversar sobre projetos, consultorias, adequações e treinamentos.",
     },
     
     // Services

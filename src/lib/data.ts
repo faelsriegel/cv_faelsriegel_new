@@ -258,7 +258,7 @@ export const portfolioFullStack = [
   },
   {
     id: 6,
-    name: "Sr. Tabs - Plataforma Musical Interativa",
+    name: "Tabs - Plataforma Musical Interativa",
     description:
       "Plataforma central para ensino e experimentação musical interativa, com biblioteca completa de acordeões e demais instrumentos musicais virtuais, suporte a tablaturas interativas, interfaces responsivas e arquitetura modular.",
     image: "/images/projects/srtabs.webp",

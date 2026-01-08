@@ -106,7 +106,7 @@ Este repositório contém meu portfólio/currículo, com foco em apresentar expe
                 <img src="public/images/projects/tabs.png" alt="Sr. Tabs" width="100%" />
             </a>
             <br />
-            <b>Sr. Tabs</b>
+            <b>Tabs</b>
             <br />
             Plataforma musical interativa
         </td>

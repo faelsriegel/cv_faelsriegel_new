@@ -136,7 +136,7 @@ export const translations = {
           description: "Monitoramento ativo 24/7 com alertas de preço no seu Telegram. Cole o link do produto, defina sua meta e receba uma notificação assim que o preço cair. Simples, rápido e automático.",
         },
         {
-          name: "Sr. Tabs - Plataforma Musical Interativa",
+          name: "Tabs - Plataforma Musical Interativa",
           description: "Plataforma central para ensino e experimentação musical interativa, com biblioteca completa de acordeões e demais instrumentos musicais virtuais, suporte a tablaturas interativas, interfaces responsivas e arquitetura modular.",
         },
       ],
@@ -319,7 +319,7 @@ export const translations = {
           description: "24/7 active monitoring with price alerts on your Telegram. Paste the product link, set your target and receive a notification as soon as the price drops. Simple, fast and automatic.",
         },
         {
-          name: "Sr. Tabs - Interactive Music Platform",
+          name: "Tabs - Interactive Music Platform",
           description: "Central platform for interactive music teaching and experimentation, featuring a complete library of accordions and other virtual musical instruments, interactive tablature support, responsive interfaces and modular architecture.",
         },
       ],

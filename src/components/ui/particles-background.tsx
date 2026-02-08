@@ -25,7 +25,7 @@ export function ParticlesBackground() {
   const options: ISourceOptions = {
     fullScreen: {
       enable: true,
-      zIndex: 0,
+      zIndex: -1,
     },
     background: {
       color: {
@@ -120,7 +120,7 @@ export function ParticlesBackground() {
       id="tsparticles"
       particlesLoaded={particlesLoaded}
       options={options}
-      className="fixed inset-0 particles-mask"
+      className="fixed inset-0 particles-mask pointer-events-none -z-10"
     />
   );
 }

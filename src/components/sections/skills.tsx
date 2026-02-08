@@ -47,8 +47,24 @@ import {
   SiGooglecloud
 } from "react-icons/si";
 import { VscAzure } from "react-icons/vsc";
-import { TbChartHistogram } from "react-icons/tb";
 import { ImGit } from "react-icons/im";
+
+const ZabbixIcon: IconType = (props) => (
+  <svg
+    viewBox="0 0 24 24"
+    width="1em"
+    height="1em"
+    aria-hidden="true"
+    focusable="false"
+    style={{ transform: "scale(1.12, 1.6)", transformOrigin: "center" }}
+    {...props}
+  >
+    <path
+      d="M5.2 6.2H18.8V8.1L9.2 15.9H18.8V17.8H5.2V15.9L14.8 8.1H5.2V6.2Z"
+      fill="currentColor"
+    />
+  </svg>
+);
 
 // Mapa de ícones react-icons para cada skill
 const skillIconMap: Record<string, IconType> = {
@@ -89,7 +105,7 @@ const skillIconMap: Record<string, IconType> = {
   "Terraform": SiTerraform,
   "Prometheus": SiPrometheus,
   "Grafana": SiGrafana,
-  "Zabbix": TbChartHistogram,
+  "Zabbix": ZabbixIcon,
   // Cloud Providers
   "AWS": FaAws,
   "Azure": VscAzure,

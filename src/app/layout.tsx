@@ -201,7 +201,9 @@ export default function RootLayout({
           <LanguageProvider>
             <ParticlesBackground />
             <NoiseOverlay />
-            {children}
+            <div className="relative z-10">
+              {children}
+            </div>
             <ScrollToTop />
           </LanguageProvider>
         </ThemeProvider>

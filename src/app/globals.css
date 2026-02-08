@@ -139,6 +139,68 @@ html:not(.dark) {
   background-attachment: fixed !important;
 }
 
+/* Particles mask - center menos intenso */
+.particles-mask {
+  mask-image: radial-gradient(circle at center, transparent 0px, rgba(0, 0, 0, 0.4) 160px, #000 280px);
+  -webkit-mask-image: radial-gradient(circle at center, transparent 0px, rgba(0, 0, 0, 0.4) 160px, #000 280px);
+}
+
+/* Tech overlays */
+.tech-scanlines {
+  opacity: 0.1;
+  background-image: repeating-linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.12) 0px,
+    rgba(15, 23, 42, 0.12) 1px,
+    transparent 1px,
+    transparent 6px
+  );
+  mix-blend-mode: multiply;
+  animation: scanline-shift 8s linear infinite;
+}
+
+.dark .tech-scanlines {
+  opacity: 0.12;
+  background-image: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0px,
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px,
+    transparent 6px
+  );
+  mix-blend-mode: screen;
+}
+
+.tech-glow {
+  opacity: 0.45;
+  background:
+    radial-gradient(60% 40% at 50% 10%, rgba(37, 99, 235, 0.18) 0%, transparent 60%),
+    radial-gradient(50% 35% at 85% 70%, rgba(14, 165, 233, 0.18) 0%, transparent 60%),
+    radial-gradient(50% 35% at 15% 75%, rgba(124, 58, 237, 0.16) 0%, transparent 60%);
+  mix-blend-mode: screen;
+}
+
+.dark .tech-glow {
+  opacity: 0.45;
+  background:
+    radial-gradient(60% 40% at 50% 10%, rgba(96, 165, 250, 0.22) 0%, transparent 60%),
+    radial-gradient(50% 35% at 85% 70%, rgba(56, 189, 248, 0.2) 0%, transparent 60%),
+    radial-gradient(50% 35% at 15% 75%, rgba(167, 139, 250, 0.2) 0%, transparent 60%);
+}
+
+.tech-circuit {
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg width='260' height='260' viewBox='0 0 260 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%231e3a8a' stroke-width='1' fill='none' opacity='0.55'%3E%3Cpath d='M20 30h60v40h40v40h60'/%3E%3Cpath d='M200 20v60h-40v40h-60'/%3E%3Cpath d='M40 200h80v-40h40v-60'/%3E%3Ccircle cx='20' cy='30' r='3'/%3E%3Ccircle cx='200' cy='20' r='3'/%3E%3Ccircle cx='40' cy='200' r='3'/%3E%3Ccircle cx='220' cy='140' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 260px 260px;
+  mix-blend-mode: multiply;
+}
+
+.dark .tech-circuit {
+  opacity: 0.2;
+  background-image: url("data:image/svg+xml,%3Csvg width='260' height='260' viewBox='0 0 260 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%2393c5fd' stroke-width='1' fill='none' opacity='0.65'%3E%3Cpath d='M20 30h60v40h40v40h60'/%3E%3Cpath d='M200 20v60h-40v40h-60'/%3E%3Cpath d='M40 200h80v-40h40v-60'/%3E%3Ccircle cx='20' cy='30' r='3'/%3E%3Ccircle cx='200' cy='20' r='3'/%3E%3Ccircle cx='40' cy='200' r='3'/%3E%3Ccircle cx='220' cy='140' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  mix-blend-mode: screen;
+}
+
 /* Dark theme background - Original Gray-Blue Gradient */
 html.dark {
   background: 
@@ -577,6 +639,11 @@ img {
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
+}
+
+@keyframes scanline-shift {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(24px); }
 }
 
 .animate-float {

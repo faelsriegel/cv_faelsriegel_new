@@ -25,7 +25,7 @@ export function ParticlesBackground() {
   const options: ISourceOptions = {
     fullScreen: {
       enable: true,
-      zIndex: -10,
+      zIndex: 0,
     },
     background: {
       color: {
@@ -37,57 +37,75 @@ export function ParticlesBackground() {
       events: {
         onHover: {
           enable: true,
-          mode: "repulse",
+          mode: ["repulse", "grab"],
         },
         onClick: {
-          enable: false,
+          enable: true,
+          mode: "repulse",
         },
       },
       modes: {
+        grab: {
+          distance: 160,
+          links: {
+            opacity: resolvedTheme === "dark" ? 0.35 : 0.25,
+          },
+        },
         repulse: {
-          distance: 100,
-          duration: 0.4,
-          speed: 1,
+          distance: 140,
+          duration: 0.35,
+          speed: 0.8,
         },
       },
     },
     particles: {
       color: {
-        value: resolvedTheme === "dark" ? "#ffffff" : "#2563eb",
+        value:
+          resolvedTheme === "dark"
+            ? ["#93c5fd", "#8ab4f8", "#7dd3fc"]
+            : ["#2563eb", "#7c3aed", "#06b6d4"],
       },
       links: {
-        color: resolvedTheme === "dark" ? "#ffffff" : "#2563eb",
-        distance: 150,
+        color: resolvedTheme === "dark" ? "#8ab4f8" : "#4f46e5",
+        distance: 110,
         enable: true,
-        opacity: resolvedTheme === "dark" ? 0.12 : 0.15,
+        opacity: resolvedTheme === "dark" ? 0.18 : 0.16,
         width: 1,
+        triangles: {
+          enable: false,
+        },
+      },
+      stroke: {
+        width: 0.4,
+        color: resolvedTheme === "dark" ? "#7dd3fc" : "#3b82f6",
+        opacity: 0.35,
       },
       move: {
         direction: "none",
         enable: true,
         outModes: {
-          default: "bounce",
+          default: "out",
         },
         random: false,
-        speed: 0.7,
+        speed: 0.24,
         straight: false,
       },
       number: {
         density: {
           enable: true,
-          height: 800,
-          width: 800,
+          height: 1200,
+          width: 1200,
         },
-        value: 40,
+        value: 75,
       },
       opacity: {
-        value: resolvedTheme === "dark" ? 0.2 : 0.35,
+        value: resolvedTheme === "dark" ? 0.26 : 0.22,
       },
       shape: {
-        type: "circle",
+        type: "square",
       },
       size: {
-        value: { min: 1, max: 2.5 },
+        value: { min: 0.6, max: 2 },
       },
     },
     detectRetina: true,
@@ -102,7 +120,7 @@ export function ParticlesBackground() {
       id="tsparticles"
       particlesLoaded={particlesLoaded}
       options={options}
-      className="absolute inset-0"
+      className="fixed inset-0 particles-mask"
     />
   );
 }

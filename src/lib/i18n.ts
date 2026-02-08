@@ -150,20 +150,8 @@ export const translations = {
           description: "Website voltado para promover os serviços prestados por Margarida de Quadra. Com o intuito de ser um espaço online que enfatiza seus serviços de maneira profissional, além de facilitar o contato com os clientes.",
         },
         {
-          name: "Portfólio de Sites - Divulgador de Projetos",
-          description: "Desenvolvido com o objetivo de testar o efeito parallax, através de seções fixas, afim de testar conhecimentos e validar templates para portfolios para divulgar projetos",
-        },
-        {
           name: "Website com Bootstrap",
           description: "Atividade associada à disciplina de Programação 2 de Engenharia de Computação, onde foi desenvolvido um website simples e estático, utilizando Bootstrap. Toda a identidade visual já estava pré-determinada pelo Professor.",
-        },
-        {
-          name: "Landing page em desenvolvimento",
-          description: "Placeholder para apresentar futuras landing pages em construção. Assim que concluídas, os detalhes sobre estratégia visual e copywriting serão exibidos aqui.",
-        },
-        {
-          name: "Experiência planejada",
-          description: "Espaço reservado para uma experiência digital focada em UX/UI que está em fase de planejamento. Compartilharemos aprendizados e resultados assim que disponíveis.",
         },
       ],
       comingSoon: "Em breve",
@@ -333,20 +321,8 @@ export const translations = {
           description: "Website aimed at promoting the services provided by Margarida de Quadra. An online space that emphasizes services professionally while facilitating client contact.",
         },
         {
-          name: "Site Portfolio - Project Showcase",
-          description: "Developed to test the parallax effect through fixed sections, to test knowledge and validate portfolio templates for showcasing projects",
-        },
-        {
           name: "Bootstrap Website",
           description: "Activity associated with Programming 2 course in Computer Engineering, where a simple static website was developed using Bootstrap. The visual identity was predetermined by the Professor.",
-        },
-        {
-          name: "Landing page in development",
-          description: "Placeholder for future landing pages under construction. Once completed, details about visual strategy and copywriting will be displayed here.",
-        },
-        {
-          name: "Planned experience",
-          description: "Space reserved for a UX/UI-focused digital experience currently in planning phase. We will share learnings and results when available.",
         },
       ],
       comingSoon: "Coming soon",

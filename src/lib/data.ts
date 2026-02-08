@@ -286,15 +286,15 @@ export const portfolioLandingPages = [
     skills: ["HTML", "CSS", "Vercel"],
     websiteUrl: "https://margaridadequadra.vercel.app",
   },
-  {
-    id: 3,
-    name: "Portfólio de Sites - Divulgador de Projetos",
-    description:
-      "Desenvolvido com o objetivo de testar o efeito parallax, através de seções fixas, afim de testar conhecimentos e validar templates para portfolios para divulgar projetos",
-    image: "/images/projects/projeto8.webp",
-    skills: ["HTML", "CSS", "Vercel"],
-    websiteUrl: "https://portfoliosites.crnet.com.br",
-  },
+  // {
+  //   id: 3,
+  //   name: "Portfólio de Sites - Divulgador de Projetos",
+  //   description:
+  //     "Desenvolvido com o objetivo de testar o efeito parallax, através de seções fixas, afim de testar conhecimentos e validar templates para portfolios para divulgar projetos",
+  //   image: "/images/projects/projeto8.webp",
+  //   skills: ["HTML", "CSS", "Vercel"],
+  //   websiteUrl: "https://portfoliosites.crnet.com.br",
+  // },
   {
     id: 4,
     name: "Website com Bootstrap",
@@ -303,24 +303,6 @@ export const portfolioLandingPages = [
     image: "/images/projects/projeto3.webp",
     skills: ["HTML/CSS", "Bootstrap", "Vercel"],
     websiteUrl: "https://web-site-bootstrap.vercel.app",
-  },
-  {
-    id: 5,
-    name: "Landing page em desenvolvimento",
-    description:
-      "Placeholder para apresentar futuras landing pages em construção. Assim que concluídas, os detalhes sobre estratégia visual e copywriting serão exibidos aqui.",
-    image: "/images/projects/placeholder.svg",
-    skills: ["Em breve"],
-    isPlaceholder: true,
-  },
-  {
-    id: 6,
-    name: "Experiência planejada",
-    description:
-      "Espaço reservado para uma experiência digital focada em UX/UI que está em fase de planejamento. Compartilharemos aprendizados e resultados assim que disponíveis.",
-    image: "/images/projects/placeholder.svg",
-    skills: ["Em breve"],
-    isPlaceholder: true,
   },
 ];
 
